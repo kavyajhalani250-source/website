@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy National Boyfriend Day • A Private Keepsake for You</title>
+
+  <!-- Google Fonts: Playfair Display, Plus Jakarta Sans, Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Theme Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pinkLight: '#fff0f3',
+            pinkSoft: '#ffe3e8',
+            pinkPaper: '#fffafb',
+            pinkCardTint: '#fff5f7',
+            pinkBorder: '#fbcfe8',
+            pinkBorderStrong: '#f472b6',
+            pinkAccent: '#ec4899',
+            inkDeep: '#831843',
+            inkMedium: '#9f1239',
+            inkMuted: '#be185d',
+            waxPink: '#db2777',
+            waxDark: '#9d174d'
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            hand: ['Caveat', 'cursive']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom CSS for Stationery Craft & Heart Animations -->
+  <style>
+    /* Paper Texture Grain */
+    .paper-canvas {
+      background-color: #fff0f3;
+      background-image: 
+        radial-gradient(#fbcfe8 0.75px, transparent 0.75px),
+        radial-gradient(#fbcfe8 0.75px, #fff0f3 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+
+    /* Stationery Card styling */
+    .stationery-card {
+      background: #ffffff;
+      border: 1px solid #fbcfe8;
+      box-shadow: 0 10px 30px -10px rgba(244, 114, 182, 0.18), 0 2px 6px -1px rgba(219, 39, 119, 0.05);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .stationery-card:hover {
+      border-color: #f472b6;
+      box-shadow: 0 16px 36px -8px rgba(244, 114, 182, 0.28);
+    }
+
+    /* Washi tape detail */
+    .washi-tape {
+      background: rgba(254, 205, 226, 0.75);
+      backdrop-filter: blur(2px);
+      border-left: 2px dashed rgba(244, 114, 182, 0.5);
+      border-right: 2px dashed rgba(244, 114, 182, 0.5);
+    }
+
+    /* Floating Heart Particles */
+    @keyframes floatUpward {
+      0% {
+        transform: translateY(0) scale(0.8) rotate(0deg);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-280px) scale(1.15) rotate(20deg);
+        opacity: 0;
+      }
+    }
+    .particle-float {
+      animation: floatUpward 3.2s ease-out forwards;
+      pointer-events: none;
+    }
+
+    /* Wax Seal Gentle Pulse */
+    @keyframes waxPulseGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.35); }
+      50% { box-shadow: 0 0 0 12px rgba(219, 39, 119, 0); }
+    }
+    .wax-pulse {
+      animation: waxPulseGlow 2.4s infinite;
+    }
+
+    /* Growing Heart Beat Transition */
+    .growing-heart-wrapper {
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #ffe3e8;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #f472b6;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #db2777;
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #print-area, #print-area * {
+        visibility: visible;
+      }
+      #print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="paper-canvas text-inkDeep font-sans antialiased min-h-screen selection:bg-pinkBorder selection:text-inkDeep relative overflow-x-hidden">
+
+  <!-- PASSCODE LOCK SCREEN / KEEPSAKE ENVELOPE COVER -->
+  <div id="lock-screen" class="fixed inset-0 z-50 bg-pinkLight/95 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-700">
+    <div class="stationery-card max-w-sm w-full rounded-3xl p-8 text-center relative border-2 border-pinkBorder shadow-2xl">
+      <div class="washi-tape absolute -top-3.5 left-1/2 -translate-x-1/2 w-28 h-6 rounded-sm"></div>
+      
+      <div class="w-14 h-14 mx-auto rounded-full bg-pinkSoft flex items-center justify-center mb-4 border border-pinkBorderStrong/30">
+        <i data-lucide="heart" class="w-7 h-7 text-waxPink fill-pinkBorder"></i>
+      </div>
+
+      <span class="text-xs uppercase tracking-[0.25em] text-inkMuted font-semibold block mb-1">
+        A private keepsake for you
+      </span>
+      <h2 class="font-serif text-2xl font-bold text-inkDeep">
+        Just for you
+      </h2>
+      <p class="text-xs text-inkMuted mt-1 mb-6">
+        Tap the wax seal or enter anniversary digits 3012
+      </p>
+
+      <!-- Pin Digits -->
+      <div class="flex justify-center gap-2 mb-6" id="passcode-inputs">
+        <input type="password" maxlength="1" inputmode="numeric" class="pin-digit w-11 h-12 text-center text-xl font-serif font-bold rounded-xl border border-pinkBorder focus:border-pinkAccent focus:outline-none bg-pinkLight/50 text-inkDeep" />
+        <input type="password" maxlength="1" inputmode="numeric" class="pin-digit w-11 h-12 text-center text-xl font-serif font-bold rounded-xl border border-pinkBorder focus:border-pinkAccent focus:outline-none bg-pinkLight/50 text-inkDeep" />
+        <input type="password" maxlength="1" inputmode="numeric" class="pin-digit w-11 h-12 text-center text-xl font-serif font-bold rounded-xl border border-pinkBorder focus:border-pinkAccent focus:outline-none bg-pinkLight/50 text-inkDeep" />
+        <input type="password" maxlength="1" inputmode="numeric" class="pin-digit w-11 h-12 text-center text-xl font-serif font-bold rounded-xl border border-pinkBorder focus:border-pinkAccent focus:outline-none bg-pinkLight/50 text-inkDeep" />
+      </div>
+
+      <!-- Quick 1-Tap Unlock -->
+      <button id="quick-unlock-btn" class="w-full py-3 px-4 rounded-2xl bg-gradient-to-r from-pinkSoft via-pinkBorder to-pinkSoft hover:from-pinkBorder hover:to-pinkBorderStrong/40 text-inkDeep font-semibold text-sm transition-all border border-pinkBorder flex items-center justify-center gap-2 group">
+        <span class="w-5 h-5 rounded-full bg-waxPink text-white flex items-center justify-center text-[10px] shadow-sm">♥</span>
+        <span>Tap to Open Your Keepsake</span>
+      </button>
+      
+      <p id="lock-hint" class="text-[11px] text-inkMuted mt-4 opacity-0 transition-opacity">
+        Hint: The day we became ours (3012)
+      </p>
+    </div>
+  </div>
+
+  <!-- FLOATING TOP NAVIGATION -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-pinkLight/85 backdrop-blur-sm border-b border-pinkBorder/60 px-4 py-3">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      
+      <a href="#hero" class="flex items-center gap-2 text-inkDeep group">
+        <div class="w-8 h-8 rounded-full bg-pinkSoft border border-pinkBorder flex items-center justify-center group-hover:bg-pinkBorder transition-colors">
+          <i data-lucide="flower-2" class="w-4 h-4 text-waxPink"></i>
+        </div>
+        <span class="font-serif font-bold text-base sm:text-lg tracking-wide text-inkDeep">
+          A private keepsake for you
+        </span>
+      </a>
+
+      <!-- Quick Nav & Sound Toggle -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Chimes Music Toggle -->
+        <button id="chimes-toggle" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 border border-pinkBorder text-inkDeep text-xs font-medium hover:bg-pinkSoft transition-colors shadow-sm" title="Toggle Soft Chimes">
+          <i data-lucide="volume-x" id="chimes-icon" class="w-3.5 h-3.5 text-waxPink"></i>
+          <span id="chimes-text" class="hidden sm:inline">Play Melody</span>
+        </button>
+
+        <!-- Lock Again Button -->
+        <button id="relock-btn" class="p-2 rounded-full bg-white/90 border border-pinkBorder text-inkMuted hover:text-inkDeep hover:bg-pinkSoft transition-colors shadow-sm" title="Lock Website">
+          <i data-lucide="lock" class="w-3.5 h-3.5 text-waxPink"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="pt-20 sm:pt-24 pb-20">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="pt-10 sm:pt-16 pb-14 px-4 sm:px-6 max-w-4xl mx-auto text-center relative">
+      
+      <!-- Top Tag Badge (Zero Inverted Commas) -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-pinkBorder shadow-sm mb-6 animate-pulse">
+        <span class="w-2 h-2 rounded-full bg-waxPink"></span>
+        <span class="text-xs uppercase tracking-[0.2em] font-semibold text-inkMuted">
+          National Boyfriend Day
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-inkDeep tracking-tight leading-[1.15] mb-5">
+        Happy National Boyfriend Day
+      </h1>
+
+      <!-- Sincere Subtitle Line -->
+      <p class="font-serif italic text-xl sm:text-2xl md:text-3xl text-inkMedium max-w-2xl mx-auto leading-relaxed mb-8">
+        You make my world feel softer, safer, and a lot more fun.
+      </p>
+
+      <!-- Handwritten Subtitle Detail -->
+      <p class="font-hand text-2xl sm:text-3xl text-waxPink mb-10">
+        a small private keepsake for you to revisit anytime
+      </p>
+
+      <!-- Interactive Quiet Hug Dispenser -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 relative">
+        <button id="hug-btn" class="relative group px-8 py-3.5 rounded-full bg-gradient-to-r from-waxPink to-waxDark text-white font-medium text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2.5">
+          <i data-lucide="heart" class="w-4 h-4 fill-current group-hover:scale-110 transition-transform"></i>
+          <span>Send a quiet hug</span>
+        </button>
+
+        <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-pinkBorder shadow-sm text-xs text-inkMuted">
+          <span>Hugs sent today:</span>
+          <span id="hug-counter" class="font-serif font-bold text-sm text-waxPink">0</span>
+        </div>
+      </div>
+
+      <!-- Divider line -->
+      <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-pinkBorderStrong to-transparent mx-auto mt-14"></div>
+    </section>
+
+    <!-- SECTION 1: THE DATES THAT MATTER (30/12/2024 WITH LIVE COUNTER) -->
+    <section id="anniversary-chapter" class="py-12 sm:py-16 px-4 sm:px-6 max-w-4xl mx-auto">
+      
+      <div class="text-center mb-10">
+        <span class="text-[11px] uppercase tracking-[0.25em] text-inkMuted font-semibold block mb-1">
+          The Dates That Matter
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-inkDeep">
+          Our Beginning
+        </h2>
+        <p class="font-hand text-2xl sm:text-3xl text-waxPink mt-1">
+          Small details that make this page feel like ours
+        </p>
+      </div>
+
+      <!-- Stationery Card with Live Counter -->
+      <div class="stationery-card rounded-3xl p-6 sm:p-10 relative overflow-hidden border-2 border-pinkBorder">
+        
+        <!-- Washi Tape Accent -->
+        <div class="washi-tape absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-6 rounded-sm"></div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-pinkBorder/60">
+          <div>
+            <span class="text-[11px] uppercase tracking-[0.2em] text-waxPink font-semibold block">
+              Official Anniversary
+            </span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-inkDeep mt-0.5">
+              30 / 12 / 2024
+            </h3>
+          </div>
+          
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-pinkSoft border border-pinkBorder self-start sm:self-auto shadow-sm">
+            <i data-lucide="sparkles" class="w-4 h-4 text-waxPink"></i>
+            <span class="font-serif font-bold text-inkDeep text-sm sm:text-base">December 30, 2024</span>
+          </div>
+        </div>
+
+        <!-- Real-Time Live Counter Units -->
+        <div class="mt-8">
+          <p class="text-xs uppercase tracking-[0.2em] text-inkMuted text-center font-medium mb-6">
+            A live counter showing days, hours, minutes, and seconds together
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-center">
+            
+            <!-- Days -->
+            <div class="bg-pinkCardTint rounded-2xl p-4 sm:p-5 border border-pinkBorder/80 shadow-sm">
+              <span id="counter-days" class="block font-serif text-3xl sm:text-5xl font-bold text-inkDeep tabular-nums">0</span>
+              <span class="text-[11px] uppercase tracking-[0.2em] text-inkMuted font-semibold mt-1 block">Days</span>
+            </div>
+
+            <!-- Hours -->
+            <div class="bg-pinkCardTint rounded-2xl p-4 sm:p-5 border border-pinkBorder/80 shadow-sm">
+              <span id="counter-hours" class="block font-serif text-3xl sm:text-5xl font-bold text-inkDeep tabular-nums">00</span>
+              <span class="text-[11px] uppercase tracking-[0.2em] text-inkMuted font-semibold mt-1 block">Hours</span>
+            </div>
+
+            <!-- Minutes -->
+            <div class="bg-pinkCardTint rounded-2xl p-4 sm:p-5 border border-pinkBorder/80 shadow-sm">
+              <span id="counter-minutes" class="block font-serif text-3xl sm:text-5xl font-bold text-inkDeep tabular-nums">00</span>
+              <span class="text-[11px] uppercase tracking-[0.2em] text-inkMuted font-semibold mt-1 block">Minutes</span>
+            </div>
+
+            <!-- Seconds -->
+            <div class="bg-pinkSoft rounded-2xl p-4 sm:p-5 border border-pinkBorderStrong/60 shadow-sm">
+              <span id="counter-seconds" class="block font-serif text-3xl sm:text-5xl font-bold text-waxPink tabular-nums">00</span>
+              <span class="text-[11px] uppercase tracking-[0.2em] text-inkMedium font-semibold mt-1 block">Seconds</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Required Line Placed Clearly Directly Under the Counter -->
+        <div class="text-center mt-8 pt-6 border-t border-pinkBorder/50 space-y-1.5">
+          <p class="font-serif italic text-lg sm:text-xl font-medium text-inkDeep">
+            i wish to continue being with you
+          </p>
+          <p class="font-hand text-2xl sm:text-3xl text-waxPink">
+            Every second since this day has been so much warmer with you by my side.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 2: SINCERE REMINDERS (4 CARDS) -->
+    <section id="reminders" class="py-12 sm:py-16 px-4 sm:px-6 max-w-4xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <span class="text-[11px] uppercase tracking-[0.25em] text-inkMuted font-semibold block mb-1">
+          Quiet Truths
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-inkDeep">
+          Short Reminders for You
+        </h2>
+        <p class="font-hand text-2xl sm:text-3xl text-waxPink mt-1">
+          For the days when you need a little extra love
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- CARD 1 -->
+        <div class="stationery-card rounded-3xl p-6 sm:p-8 relative group hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-2xl bg-pinkSoft flex items-center justify-center text-waxPink mb-4 border border-pinkBorder">
+            <i data-lucide="sun" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-inkMuted font-semibold block mb-1">
+            Always Remember
+          </span>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-inkDeep mb-3">
+            You make life feel lighter
+          </h3>
+          <p class="text-sm sm:text-base text-inkMedium leading-relaxed">
+            Even on ordinary afternoons or after tiring days, your presence brings this calm, easy warmth. You have an effortless way of turning stressful moments into quiet laughs and making everything feel manageable again.
+          </p>
+          <div class="mt-4 pt-4 border-t border-pinkBorder/50 flex items-center justify-between">
+            <span class="font-hand text-xl text-waxPink">so grateful for your energy</span>
+            <i data-lucide="smile" class="w-4 h-4 text-waxPink/70"></i>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="stationery-card rounded-3xl p-6 sm:p-8 relative group hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-2xl bg-pinkSoft flex items-center justify-center text-waxPink mb-4 border border-pinkBorder">
+            <i data-lucide="shield-heart" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-inkMuted font-semibold block mb-1">
+            Safe Harbor
+          </span>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-inkDeep mb-3">
+            You can always be yourself with me
+          </h3>
+          <p class="text-sm sm:text-base text-inkMedium leading-relaxed">
+            You never have to perform, pretend, or hold your guard up with me. Whether you feel energetic, quiet, silly, or tired, you are fully safe here. I love every single side of who you are, just as you are.
+          </p>
+          <div class="mt-4 pt-4 border-t border-pinkBorder/50 flex items-center justify-between">
+            <span class="font-hand text-xl text-waxPink">no expectations, just us</span>
+            <i data-lucide="home" class="w-4 h-4 text-waxPink/70"></i>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="stationery-card rounded-3xl p-6 sm:p-8 relative group hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-2xl bg-pinkSoft flex items-center justify-center text-waxPink mb-4 border border-pinkBorder">
+            <i data-lucide="medal" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-inkMuted font-semibold block mb-1">
+            Cheering for You
+          </span>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-inkDeep mb-3">
+            I am proud of you, darling
+          </h3>
+          <p class="text-sm sm:text-base text-inkMedium leading-relaxed">
+            I see how hard you work, the care you put into what you do, and the silent patience you carry. Even when things feel slow or heavy, you are growing every day, and I will always be your biggest supporter.
+          </p>
+          <div class="mt-4 pt-4 border-t border-pinkBorder/50 flex items-center justify-between">
+            <span class="font-hand text-xl text-waxPink">always in your corner</span>
+            <i data-lucide="star" class="w-4 h-4 text-waxPink/70"></i>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="stationery-card rounded-3xl p-6 sm:p-8 relative group hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-2xl bg-pinkSoft flex items-center justify-center text-waxPink mb-4 border border-pinkBorder">
+            <i data-lucide="coffee" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-inkMuted font-semibold block mb-1">
+            Pure Peace
+          </span>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-inkDeep mb-3">
+            You are my favourite kind of comfort
+          </h3>
+          <p class="text-sm sm:text-base text-inkMedium leading-relaxed">
+            Just hearing your voice or resting beside you makes the world quiet down. You are my safe place, my quiet pause in the middle of a loud day, and the easiest person in the entire world to love.
+          </p>
+          <div class="mt-4 pt-4 border-t border-pinkBorder/50 flex items-center justify-between">
+            <span class="font-hand text-xl text-waxPink">my person, my home</span>
+            <i data-lucide="sparkle" class="w-4 h-4 text-waxPink/70"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 3: POCKET NOTES DISPENSER -->
+    <section id="pocket-slips" class="py-12 sm:py-16 px-4 sm:px-6 max-w-2xl mx-auto text-center">
+      
+      <div class="mb-8">
+        <span class="text-[11px] uppercase tracking-[0.25em] text-inkMuted font-semibold block mb-1">
+          A Little Love on Demand
+        </span>
+        <h2 class="font-serif text-3xl font-bold text-inkDeep">
+          Pocket Notes
+        </h2>
+        <p class="font-hand text-2xl text-waxPink mt-1">
+          Tap for a fresh reminder whenever you miss me
+        </p>
+      </div>
+
+      <div class="stationery-card rounded-3xl p-8 relative border-2 border-pinkBorder shadow-lg">
+        <div class="washi-tape absolute -top-3 left-1/2 -translate-x-1/2 w-28 h-5 rounded-sm"></div>
+
+        <div class="min-h-[110px] flex items-center justify-center px-4 py-2">
+          <p id="dispenser-text" class="font-serif italic text-lg sm:text-xl text-inkDeep transition-opacity duration-300">
+            Whenever today feels busy or distant, remember I am cheering for you and saving the biggest hug for the next time I see you.
+          </p>
+        </div>
+
+        <div class="mt-6 flex items-center justify-center gap-3">
+          <button id="next-slip-btn" class="px-6 py-2.5 rounded-full bg-pinkSoft hover:bg-pinkBorder text-inkDeep text-xs sm:text-sm font-semibold border border-pinkBorder transition-all flex items-center gap-2">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-waxPink"></i>
+            <span>Draw another note</span>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 4: THE FINAL LETTER ENVELOPE (EXACT USER LETTER) -->
+    <section id="final-surprise" class="py-16 sm:py-24 px-4 sm:px-6 max-w-3xl mx-auto">
+      
+      <div class="text-center mb-10">
+        <span class="text-[11px] uppercase tracking-[0.25em] text-inkMuted font-semibold block mb-1">
+          Final Chapter • Kept for You
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-inkDeep">
+          A Letter Waits for You
+        </h2>
+        <p class="font-hand text-2xl sm:text-3xl text-waxPink mt-1">
+          A tap reveals what is inside
+        </p>
+      </div>
+
+      <!-- Envelope & Letter Container -->
+      <div id="envelope-wrapper" class="relative mx-auto max-w-xl transition-all">
+        
+        <div class="stationery-card rounded-3xl border-2 border-pinkBorder p-6 sm:p-10 relative bg-pinkLight/60 shadow-xl overflow-hidden">
+          
+          <!-- Wax Seal Button (Initial State) -->
+          <div id="wax-seal-container" class="text-center py-10 transition-all duration-500">
+            
+            <button id="break-seal-btn" class="wax-pulse relative w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full bg-gradient-to-br from-waxPink to-waxDark border-4 border-pinkSoft text-white shadow-2xl flex flex-col items-center justify-center group hover:scale-105 active:scale-95 transition-transform cursor-pointer">
+              <i data-lucide="mail-heart" class="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.8] group-hover:scale-110 transition-transform"></i>
+              <span class="text-[9px] uppercase tracking-widest font-bold mt-0.5">Open</span>
+            </button>
+
+            <h3 class="font-serif text-2xl font-bold text-inkDeep mt-6">
+              Sealed with all my love
+            </h3>
+            <p class="font-hand text-xl text-waxPink mt-1">
+              Tap the wax seal to read your letter
+            </p>
+          </div>
+
+          <!-- THE UNFOLDED LETTER WITH USER EXACT TEXT -->
+          <div id="letter-content" class="hidden transition-all duration-700 opacity-0">
+            
+            <div id="print-area" class="bg-white rounded-2xl p-6 sm:p-10 border border-pinkBorder shadow-inner relative">
+              
+              <!-- Letter Top Details -->
+              <div class="flex items-center justify-between border-b border-pinkBorder/60 pb-4 mb-6">
+                <div>
+                  <span class="text-[10px] uppercase tracking-[0.25em] text-inkMuted font-bold block">
+                    Private Letter
+                  </span>
+                  <span class="font-hand text-xl text-waxPink">
+                    Written with all my heart
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs font-serif text-inkMuted block">For Boyfriend Day</span>
+                  <span class="text-[10px] font-mono text-waxPink uppercase tracking-wider">Keepsake</span>
+                </div>
+              </div>
+
+              <!-- Exact Letter Text Provided by User (Zero Inverted Commas) -->
+              <div class="space-y-4 text-inkDeep font-serif leading-relaxed text-base sm:text-lg">
+                
+                <!-- Salutation -->
+                <p class="font-serif font-bold text-2xl sm:text-3xl text-inkDeep">
+                  to my favorite guy,
+                </p>
+
+                <!-- Body Paragraph 1 -->
+                <p>
+                  i wanted to take a quiet second away from all the daily noise to write this down, because some things get lost in quick texts and passing conversations. life def has a way of moving ridiculously fast, between managing everyday chaos, running around trying to figure out what comes next, and getting caught up in a million small tasks, also internals as well.
+                </p>
+
+                <!-- Body Paragraph 2 -->
+                <p>
+                  but no matter how crowded or loud things get, you are always the place where everything softens. having you around feels like a deep breath after holding it all day, this is why i call you everytime i cry or feel low.
+                </p>
+
+                <!-- Body Paragraph 3 -->
+                <p>
+                  thank you for being my constant baby. we laugh until our ribs ache over things that make sense to absolutely nobody else and honestly, i like it that way, i miss you crazy dude, i really miss you bht zyda i wish i could come back to you jldi se but i can't diwali tk.
+                </p>
+
+                <!-- Body Paragraph 4 -->
+                <p>
+                  let's keep going back to each other and never breakup, sounds crazy but yes let's not breakup soon.
+                </p>
+
+                <!-- Closing Line -->
+                <div class="pt-6 mt-6 border-t border-pinkBorder/60 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                  <div>
+                    <p class="font-serif italic text-2xl sm:text-3xl font-bold text-waxPink">
+                      i love you so much.
+                    </p>
+                    <p class="font-hand text-2xl text-inkDeep mt-1">
+                      Always yours
+                    </p>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-pinkSoft hover:bg-pinkBorder text-inkDeep text-xs font-medium border border-pinkBorder flex items-center gap-1.5 transition-colors">
+                      <i data-lucide="printer" class="w-3.5 h-3.5 text-waxPink"></i>
+                      <span>Save as Keepsake</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 5: INTERACTIVE GROWING HEART ANIMATION -->
+    <section id="growing-love-section" class="py-12 sm:py-20 px-4 sm:px-6 max-w-xl mx-auto text-center">
+      
+      <div class="stationery-card rounded-3xl p-8 sm:p-12 relative border-2 border-pinkBorder shadow-xl overflow-hidden bg-white/90">
+        
+        <div class="washi-tape absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-6 rounded-sm"></div>
+
+        <span class="text-[11px] uppercase tracking-[0.25em] text-inkMuted font-semibold block mb-2">
+          One Last Question
+        </span>
+        
+        <!-- Prompt -->
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-inkDeep mb-4">
+          Do you know how much I love you?
+        </h3>
+        
+        <p class="text-xs sm:text-sm text-inkMuted mb-8">
+          Tap the button below and watch my love for you keep growing
+        </p>
+
+        <!-- Interactive Heart Canvas Display Area -->
+        <div class="relative h-48 sm:h-56 flex items-center justify-center mb-8">
+          
+          <!-- Outer Pulsing Glow Aura -->
+          <div id="heart-glow-ring" class="absolute w-32 h-32 rounded-full bg-pinkSoft/60 blur-xl transition-all duration-300 pointer-events-none"></div>
+
+          <!-- Central Growing Heart SVG Container -->
+          <div id="growing-heart-wrapper" class="growing-heart-wrapper relative cursor-pointer select-none">
+            <svg id="growing-heart-svg" class="w-24 h-24 text-waxPink fill-waxPink filter drop-shadow-lg transition-transform duration-300" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            
+            <!-- In-Heart Love Text -->
+            <span id="heart-inner-text" class="absolute inset-0 flex items-center justify-center text-white font-serif font-bold text-xs pointer-events-none tracking-tight">
+              100%
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Affirmation Caption Pill -->
+        <div class="min-h-[32px] mb-6 flex items-center justify-center">
+          <span id="love-quote-badge" class="inline-block px-4 py-1.5 rounded-full bg-pinkSoft border border-pinkBorder text-xs sm:text-sm font-hand text-inkDeep transition-all duration-300">
+            Click Yes to see how much
+          </span>
+        </div>
+
+        <!-- The Yes Button -->
+        <div class="flex items-center justify-center gap-4">
+          <button id="yes-love-btn" class="px-10 py-3.5 rounded-full bg-gradient-to-r from-waxPink to-waxDark hover:from-waxDark hover:to-waxPink text-white font-serif font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-2 group">
+            <i data-lucide="heart" class="w-5 h-5 fill-current group-hover:scale-125 transition-transform"></i>
+            <span>Yes</span>
+          </button>
+        </div>
+
+        <!-- Love Level Indicator -->
+        <div class="mt-8 pt-6 border-t border-pinkBorder/50 flex items-center justify-between text-xs text-inkMuted">
+          <span>Love level for you:</span>
+          <span id="love-percentage-display" class="font-serif font-bold text-sm text-waxPink">100%</span>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-pinkBorder/60 bg-pinkLight/80 py-8 px-4 text-center">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <div class="flex items-center justify-center gap-2 text-waxPink">
+        <i data-lucide="heart" class="w-4 h-4 fill-current"></i>
+        <span class="font-serif font-semibold text-sm">A private keepsake for you</span>
+        <i data-lucide="heart" class="w-4 h-4 fill-current"></i>
+      </div>
+      <p class="text-xs text-inkMuted">
+        National Boyfriend Day • Built to revisit whenever you want a reminder
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT LOGIC (Live Timer, Growing Heart, Sound Synthesis, Locks) -->
+  <script>
+    // 1. Anniversary Date: 30/12/2024
+    const anniversaryDate = new Date(2024, 11, 30, 0, 0, 0);
+
+    function startLiveAnniversaryCounter() {
+      function updateTimer() {
+        const now = new Date();
+        const diff = Math.max(0, now - anniversaryDate);
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        const d = document.getElementById('counter-days');
+        const h = document.getElementById('counter-hours');
+        const m = document.getElementById('counter-minutes');
+        const s = document.getElementById('counter-seconds');
+
+        if (d) d.textContent = days.toLocaleString();
+        if (h) h.textContent = String(hours).padStart(2, '0');
+        if (m) m.textContent = String(minutes).padStart(2, '0');
+        if (s) s.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    }
+
+    // 2. Pocket Notes Dispenser (Zero quotation marks)
+    const pocketNotes = [
+      "Whenever today feels busy or distant, remember I am cheering for you and saving the biggest hug for the next time I see you.",
+      "You make my world feel softer, safer, and a lot more fun, even from miles away.",
+      "Take a slow breath, darling. You are doing so much better than you think, and I am proud of you.",
+      "If we are apart right now, just know that thinking of you is still my favorite part of the day.",
+      "You never have to carry everything by yourself. I am always right here in your corner.",
+      "Thinking back to December 30, 2024 and feeling grateful all over again that it is you.",
+      "You are my favourite kind of comfort and the easiest person to love."
+    ];
+    let slipIndex = 0;
+
+    function initPocketDispenser() {
+      const btn = document.getElementById('next-slip-btn');
+      const text = document.getElementById('dispenser-text');
+      if (!btn || !text) return;
+
+      btn.addEventListener('click', () => {
+        text.style.opacity = '0';
+        playSoftTone(523.25, 0.15); // C5
+        setTimeout(() => {
+          slipIndex = (slipIndex + 1) % pocketNotes.length;
+          text.textContent = pocketNotes[slipIndex];
+          text.style.opacity = '1';
+        }, 300);
+      });
+    }
+
+    // 3. Hug Button & Floating Hearts
+    let hugCount = parseInt(localStorage.getItem('boyfriend_day_hugs') || '0', 10);
+
+    function initHugButton() {
+      const btn = document.getElementById('hug-btn');
+      const counter = document.getElementById('hug-counter');
+      if (counter) counter.textContent = hugCount;
+
+      if (!btn) return;
+      btn.addEventListener('click', (e) => {
+        hugCount++;
+        localStorage.setItem('boyfriend_day_hugs', hugCount);
+        if (counter) counter.textContent = hugCount;
+
+        playSoftTone(659.25, 0.25); // E5
+        createHeartBurst(e.clientX, e.clientY);
+      });
+    }
+
+    function createHeartBurst(x, y) {
+      for (let i = 0; i < 9; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'fixed particle-float text-waxPink select-none text-xl z-50';
+        heart.innerHTML = '♥';
+        
+        const offsetX = (Math.random() - 0.5) * 100;
+        const offsetY = (Math.random() - 0.5) * 50;
+        heart.style.left = `${x + offsetX}px`;
+        heart.style.top = `${y + offsetY}px`;
+        heart.style.fontSize = `${16 + Math.random() * 16}px`;
+        heart.style.animationDuration = `${2.2 + Math.random() * 1.5}s`;
+
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 3200);
+      }
+    }
+
+    // 4. Interactive Wax Seal Letter Unfold
+    function initWaxSeal() {
+      const sealBtn = document.getElementById('break-seal-btn');
+      const sealContainer = document.getElementById('wax-seal-container');
+      const letterContent = document.getElementById('letter-content');
+
+      if (!sealBtn || !letterContent) return;
+
+      sealBtn.addEventListener('click', () => {
+        playMelodicArpeggio();
+        
+        sealContainer.style.opacity = '0';
+        sealContainer.style.transform = 'scale(0.85)';
+        
+        setTimeout(() => {
+          sealContainer.classList.add('hidden');
+          letterContent.classList.remove('hidden');
+          
+          requestAnimationFrame(() => {
+            letterContent.style.opacity = '1';
+            letterContent.style.transform = 'translateY(0)';
+          });
+        }, 400);
+      });
+    }
+
+    // 5. Interactive Growing Heart Animation Logic
+    let heartScale = 1.0;
+    let lovePercent = 100;
+    let yesClickCount = 0;
+
+    const loveAffirmations = [
+      "more than yesterday",
+      "more than all the stars combined",
+      "more than words can even explain",
+      "past the moon and back again",
+      "even when you are being silly",
+      "every single second of every day",
+      "more than anything in the world",
+      "infinite, endless, forever and always"
+    ];
+
+    function initGrowingHeart() {
+      const yesBtn = document.getElementById('yes-love-btn');
+      const heartWrapper = document.getElementById('growing-heart-wrapper');
+      const heartSvg = document.getElementById('growing-heart-svg');
+      const heartGlow = document.getElementById('heart-glow-ring');
+      const heartText = document.getElementById('heart-inner-text');
+      const loveBadge = document.getElementById('love-quote-badge');
+      const percentDisplay = document.getElementById('love-percentage-display');
+
+      if (!yesBtn) return;
+
+      yesBtn.addEventListener('click', (e) => {
+        yesClickCount++;
+
+        // Increase scale smoothly up to a nice visible size
+        heartScale = Math.min(2.4, 1.0 + (yesClickCount * 0.14));
+        
+        // Increase percentage
+        lovePercent += Math.floor(100 + Math.random() * 150);
+
+        if (heartWrapper) {
+          heartWrapper.style.transform = `scale(${heartScale})`;
+        }
+
+        if (heartGlow) {
+          const glowSize = 130 + (yesClickCount * 18);
+          heartGlow.style.width = `${glowSize}px`;
+          heartGlow.style.height = `${glowSize}px`;
+          heartGlow.style.backgroundColor = 'rgba(244, 114, 182, 0.45)';
+        }
+
+        if (heartText) {
+          if (lovePercent >= 1000) {
+            heartText.textContent = '∞';
+            heartText.style.fontSize = '22px';
+          } else {
+            heartText.textContent = `${lovePercent}%`;
+          }
+        }
+
+        if (percentDisplay) {
+          percentDisplay.textContent = `${lovePercent.toLocaleString()}% and counting`;
+        }
+
+        if (loveBadge) {
+          const quoteIndex = (yesClickCount - 1) % loveAffirmations.length;
+          loveBadge.style.opacity = '0';
+          setTimeout(() => {
+            loveBadge.textContent = loveAffirmations[quoteIndex];
+            loveBadge.style.opacity = '1';
+          }, 150);
+        }
+
+        // Soft melodic tone and particle bursts
+        playSoftTone(440 + (yesClickCount * 30), 0.35);
+        createHeartBurst(e.clientX, e.clientY);
+      });
+    }
+
+    // 6. Passcode Lock Screen (3012 or single tap on wax seal)
+    function initPasscode() {
+      const lockScreen = document.getElementById('lock-screen');
+      const inputs = document.querySelectorAll('.pin-digit');
+      const quickUnlock = document.getElementById('quick-unlock-btn');
+      const relockBtn = document.getElementById('relock-btn');
+      const hint = document.getElementById('lock-hint');
+
+      function unlock() {
+        if (!lockScreen) return;
+        lockScreen.style.opacity = '0';
+        lockScreen.style.pointerEvents = 'none';
+        playMelodicArpeggio();
+        setTimeout(() => {
+          lockScreen.classList.add('hidden');
+        }, 700);
+      }
+
+      function lock() {
+        if (!lockScreen) return;
+        lockScreen.classList.remove('hidden');
+        lockScreen.style.pointerEvents = 'auto';
+        requestAnimationFrame(() => {
+          lockScreen.style.opacity = '1';
+        });
+        inputs.forEach(i => i.value = '');
+        if (inputs[0]) inputs[0].focus();
+      }
+
+      if (quickUnlock) {
+        quickUnlock.addEventListener('click', unlock);
+      }
+
+      if (relockBtn) {
+        relockBtn.addEventListener('click', lock);
+      }
+
+      inputs.forEach((input, idx) => {
+        input.addEventListener('input', (e) => {
+          if (input.value.length === 1 && idx < inputs.length - 1) {
+            inputs[idx + 1].focus();
+          }
+
+          const currentPin = Array.from(inputs).map(i => i.value).join('');
+          if (currentPin.length === 4) {
+            if (currentPin === '3012') {
+              unlock();
+            } else {
+              inputs.forEach(i => i.classList.add('border-red-400'));
+              if (hint) hint.style.opacity = '1';
+              setTimeout(() => {
+                inputs.forEach(i => {
+                  i.value = '';
+                  i.classList.remove('border-red-400');
+                });
+                inputs[0].focus();
+              }, 800);
+            }
+          }
+        });
+
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Backspace' && !input.value && idx > 0) {
+            inputs[idx - 1].focus();
+          }
+        });
+      });
+    }
+
+    // 7. Web Audio API Ambient Chimes & Melody Synthesizer
+    let audioCtx = null;
+    let isChimesPlaying = false;
+    let chimesInterval = null;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContextClass();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSoftTone(freq, duration = 0.3) {
+      try {
+        const ctx = getAudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+        gain.gain.setValueAtTime(0.001, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.08, ctx.currentTime + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start();
+        osc.stop(ctx.currentTime + duration + 0.1);
+      } catch (err) {
+        // Audio policy ignore
+      }
+    }
+
+    function playMelodicArpeggio() {
+      const notes = [392.00, 440.00, 523.25, 659.25, 783.99]; // G4, A4, C5, E5, G5
+      notes.forEach((freq, idx) => {
+        setTimeout(() => playSoftTone(freq, 0.4), idx * 120);
+      });
+    }
+
+    function initChimesToggle() {
+      const btn = document.getElementById('chimes-toggle');
+      const icon = document.getElementById('chimes-icon');
+      const text = document.getElementById('chimes-text');
+
+      if (!btn) return;
+
+      const pentatonicScale = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33];
+
+      btn.addEventListener('click', () => {
+        getAudioContext();
+        isChimesPlaying = !isChimesPlaying;
+
+        if (isChimesPlaying) {
+          if (icon) {
+            icon.setAttribute('data-lucide', 'volume-2');
+            lucide.createIcons();
+          }
+          if (text) text.textContent = 'Pause Melody';
+          btn.classList.add('bg-pinkSoft', 'border-pinkBorderStrong');
+
+          chimesInterval = setInterval(() => {
+            const randomNote = pentatonicScale[Math.floor(Math.random() * pentatonicScale.length)];
+            playSoftTone(randomNote, 0.7);
+          }, 1800);
+          playSoftTone(523.25, 0.5);
+        } else {
+          if (icon) {
+            icon.setAttribute('data-lucide', 'volume-x');
+            lucide.createIcons();
+          }
+          if (text) text.textContent = 'Play Melody';
+          btn.classList.remove('bg-pinkSoft', 'border-pinkBorderStrong');
+          if (chimesInterval) clearInterval(chimesInterval);
+        }
+      });
+    }
+
+    // Initialize everything on load
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      startLiveAnniversaryCounter();
+      initPocketDispenser();
+      initHugButton();
+      initWaxSeal();
+      initGrowingHeart();
+      initPasscode();
+      initChimesToggle();
+    });
+  </script>
+
+</body>
+</html>
